@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-model="name">
+        <p>{{ name }}</p>
+    </div>
+    <!-- Using Two-Way-Binding "v-model" -->
+   <script>
+       let app = new Vue({
+           el:'#app',
+           data:{
+               name: 'Nonna'
+           }
+       });
+   </script>
+</body>
+</html>
