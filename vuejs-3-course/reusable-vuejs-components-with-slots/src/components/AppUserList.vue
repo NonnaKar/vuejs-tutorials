@@ -11,11 +11,12 @@
         />
         <div>
           <div>{{ item.name.first }}</div>
+          <slot name="secondrow" :item="item"></slot>
         </div>
       </li>
     </ul>
-    <slot v-if="state === 'loading'" name="loading">loading...</slot>
-    <slot v-if="state === 'error'" name="error"
+    <slot v-else name="loading"> loading...</slot>
+    <slot v-if="state === 'failed'" name="error"
       >Oops, something went wrong</slot
     >
   </section>

@@ -1,28 +1,17 @@
 <template>
   <AppUserList>
-    <template v-slot:loading>
-      <AppSpinner />
+    <template v-slot:secondrow="item">
+      <a :href="'tel:' + item.item.phone">{{ item.item.phone }}</a>
+      <a :href="'mailto:' + item.item.email">{{ item.item.email }}</a>
     </template>
   </AppUserList>
 </template>
 
 <script>
 import AppUserList from "./components/AppUserList.vue";
-import AppSpinner from "./components/AppSpinner.vue";
 export default {
   components: {
     AppUserList,
-    AppSpinner,
-  },
-  data() {
-    return {
-      log: true,
-    };
-  },
-  methods: {
-    click() {
-      console.log("works");
-    },
   },
 };
 </script>
