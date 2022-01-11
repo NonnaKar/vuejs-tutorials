@@ -1,5 +1,6 @@
 <template>
   <section>
+    <slot name="title">Users</slot>
     <ul class="userlist" v-if="state === 'loaded'">
       <li v-for="item in data.results" :key="item.email">
         <img
@@ -13,7 +14,10 @@
         </div>
       </li>
     </ul>
-    <slot name="loading">loading...</slot>
+    <slot v-if="state === 'loading'" name="loading">loading...</slot>
+    <slot v-if="state === 'error'" name="error"
+      >Oops, something went wrong</slot
+    >
   </section>
 </template>
 

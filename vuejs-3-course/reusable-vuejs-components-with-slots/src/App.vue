@@ -1,24 +1,18 @@
 <template>
-  <AppLayout>
-    <template #header> Slots are awesome </template>
-    <template #default>
-      <AppButton @click="log">
-        <AppIcon name="heart" />
-        add to favorites
-      </AppButton>
+  <AppUserList>
+    <template v-slot:loading>
+      <AppSpinner />
     </template>
-  </AppLayout>
+  </AppUserList>
 </template>
 
 <script>
-import AppLayout from "./components/AppLayout.vue";
-import AppButton from "./components/AppButton.vue";
-import AppIcon from "./components/AppIcon.vue";
+import AppUserList from "./components/AppUserList.vue";
+import AppSpinner from "./components/AppSpinner.vue";
 export default {
   components: {
-    AppButton,
-    AppIcon,
-    AppLayout,
+    AppUserList,
+    AppSpinner,
   },
   data() {
     return {

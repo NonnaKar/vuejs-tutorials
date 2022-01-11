@@ -1,5 +1,5 @@
 <template>
-  <div class="sk-fading-circle"></div>
+  <div class="sk-fading-circle"></div> 
 </template>
 
 <style scoped>
